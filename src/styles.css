@@ -1,0 +1,119 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    gap: 30px;
+    background-color: rgb(223, 223, 202);
+    height: 50px;;
+}
+
+button {
+    border-bottom: none;
+    background-color: rgb(223, 223, 202);
+    border-color: black;
+    width: 100px;
+    height: 40px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-weight: bold;
+}
+
+button.active {
+    background-color: rgb(163, 195, 140);
+}
+
+button:hover {
+    background-color: rgb(169, 167, 167);
+    cursor: pointer;
+}
+
+.container {
+    background-color: rgb(223, 223, 202);
+    height: 85%;
+    width: clamp(550px, 60%, 700px);
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 40px;
+}
+
+
+
+.quote {
+    width: 65%;
+    font-family: cursive, sans-serif;
+    font-size: 18px;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 24px;
+    padding-bottom: 5px;
+}
+
+h4 {
+    font-weight: 100;
+}
+
+.box {
+    border: 20px solid whitesmoke;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-image: conic-gradient(
+        whitesmoke 90deg,
+        rgba(38, 77, 44, 0.614) 90deg 180deg,
+        whitesmoke 180deg 270deg,
+        rgba(38, 77, 44, 0.614) 270deg
+    );
+    border-image-width: 100px;
+    height: 150px;
+}
+
+.contact-name {
+    padding-bottom: 10px;
+}
+
+.restaurant-name, .contact-title {
+    border: 10px solid rgb(202, 186, 163);
+    padding: 20px;
+    border-radius: 30%;
+    background-color: whitesmoke;
+    text-align: center;
+    font-weight: bold;
+    font-family: impact;
+    font-size: 30px;
+    letter-spacing: 8px;
+    color: rgba(38, 77, 44, 0.614);
+}
+
+.contact-title {
+    width: 280px;
+    align-self: center;
+}
+
+#content {
+    height: 100vh;
+    background: conic-gradient(
+        #ffffff 90deg,
+        rgb(202, 186, 163) 90deg 180deg,
+        #ffffff 180deg 270deg,
+        rgb(202, 186, 163) 270deg
+    );
+    background-repeat: repeat;
+    background-size: 40px 40px;
+    background-position: top left;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+
+
