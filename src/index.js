@@ -1,33 +1,18 @@
-import './styles.css'
+const unneeded = document.querySelector(".deleteMe")
+unneeded.remove()
 
-import { createHomepage } from './home.js'
-import { createMenu } from './menu.js'
-import { createContact } from './contact.js'
+import "./styles.css"
 
-function clearContent() {
-    const page = document.getElementById('content')
-    while (page.firstChild) {
-        page.removeChild(page.firstChild)
-    }
-}
+import { taskButtonLogic } from "./taskBtnLogic";
+import { allTasksBtnLogic } from "./allTasks";
+import { todayBtnLogic } from "./today";
+import { allTasksArray } from "./taskFormLogic";
+import { projectLogic } from "./projectLogic";
+import { projectButtonLogic } from "./projectButtonLogic";
+todayBtnLogic();
+allTasksBtnLogic(allTasksArray);
+taskButtonLogic();
+projectLogic();
+projectButtonLogic();
 
-const home = document.querySelector('.home')
-home.addEventListener('click', () => {
-    clearContent();
-    createHomepage();
-})
-
-const menu = document.querySelector('.menu')
-menu.addEventListener('click', () => {
-    clearContent();
-    createMenu();
-})
-
-const contact = document.querySelector('.contact')
-contact.addEventListener('click', () => {
-    clearContent();
-    createContact();
-})
-
-createHomepage();
 

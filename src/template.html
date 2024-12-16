@@ -3,22 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant Page</title>
+    <title>Todo-List</title>
 </head>
 <body>
-<header class="header">
-    <nav>
-        <button class="home active">Home</button>
-    </nav>
-    <nav>
-        <button class="menu">Menu</button>
-    </nav>
-    <nav>
-        <button class="contact">Contact</button>
-    </nav>
-</header>
-<div id="content">
-
-</div>
+    <div class="formDiv">
+                
+    </div>
+    <div id="container">
+        <div class="sidebar">
+            <div class="git-info">
+                <a href="https://github.com/koyler88/todo-list" target="_blank" rel="noopener noreferrer">
+                    <img class="gh-image" src="SVG/github-mark.png" alt="github logo">
+                </a>
+            </div>
+            <div class="buttons">
+                <button class="add-task">
+                    <img class="plus-circle" src="SVG/plus-circle.svg" alt=""> Add Task
+                </button>
+                <button class="all-tasks active">
+                    <img src="SVG/inbox.svg" alt="">All Tasks
+                </button>
+                <button class="today">
+                    <img src="SVG/calendar-today.svg" alt="">Today
+                </button>
+            </div>
+            <div class="projects">
+                <div class="project-header">
+                    Projects
+                </div>
+                <button class="new-project">
+                    <img src="SVG/plus.svg" alt="">
+                    Add Project
+                </button>
+                <div class="project-container">
+                    <div class="Home project">
+                        <img class="folder" src="SVG/folder.svg" alt="folder icon"> Home
+                    </div>
+                </div>
+                <div class="deleteMe">
+                    <img src="SVG/trash-can-outline.svg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="content">
+        </div>
+    </div>
 </body>
 </html>

@@ -3,117 +3,195 @@
     margin: 0;
 }
 
-header {
+#container {
     display: flex;
-    justify-content: center;
-    align-items: end;
-    gap: 30px;
-    background-color: rgb(223, 223, 202);
-    height: 50px;;
+    height: 100vh;
 }
 
-button {
-    border-bottom: none;
-    background-color: rgb(223, 223, 202);
-    border-color: black;
-    width: 100px;
-    height: 40px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    font-weight: bold;
+.sidebar {
+    width: clamp(150px, 20%, 200px);
+    background-color: rgb(230, 229, 217);
+    box-shadow: 2px 2px 2px gray;
+    padding-right: 15px;
+    padding-left: 15px;
 }
 
-button.active {
-    background-color: rgb(163, 195, 140);
-}
-
-button:hover {
-    background-color: rgb(169, 167, 167);
-    cursor: pointer;
-}
-
-.container {
-    background-color: rgb(223, 223, 202);
-    height: 85%;
-    width: clamp(550px, 60%, 700px);
-    border-radius: 30px;
+.git-info {
     display: flex;
-    flex-direction: column;
-    gap: 50px;
-    padding: 40px;
+    padding-left: 15px;
+    padding-top: 30px;
+    height: 60px;
+    border-bottom: 5px dotted black;
+    margin-bottom: 15px;
 }
 
-
-
-.quote {
-    width: 65%;
-    font-family: cursive, sans-serif;
-    font-size: 18px;
-}
-
-.title {
-    font-weight: bold;
-    font-size: 24px;
-    padding-bottom: 5px;
-}
-
-h4 {
-    font-weight: 100;
-}
-
-.box {
-    border: 20px solid whitesmoke;
-    background-color: whitesmoke;
+.project {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    border-image: conic-gradient(
-        whitesmoke 90deg,
-        rgba(38, 77, 44, 0.614) 90deg 180deg,
-        whitesmoke 180deg 270deg,
-        rgba(38, 77, 44, 0.614) 270deg
-    );
-    border-image-width: 100px;
-    height: 150px;
+    gap: 10px;
+    padding-left: 15px;
 }
 
-.contact-name {
-    padding-bottom: 10px;
+.gh-image {
+    height: 40px;
+    width: 40px;
 }
 
-.restaurant-name, .contact-title {
-    border: 10px solid rgb(202, 186, 163);
-    padding: 20px;
-    border-radius: 30%;
-    background-color: whitesmoke;
-    text-align: center;
-    font-weight: bold;
-    font-family: impact;
-    font-size: 30px;
-    letter-spacing: 8px;
-    color: rgba(38, 77, 44, 0.614);
+.plus-circle {
+    filter: invert(10%) sepia(70%) hue-rotate(186deg) saturate(47);
+    opacity: 80%;
 }
 
-.contact-title {
-    width: 280px;
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 10px;
+}
+
+.new-project {
+    margin-left: 10px;
+}
+
+.active {
+    background-color: rgba(207, 202, 202, .6);
+    color: rgb(60, 109, 177);
+}
+
+.folder {
+    filter: invert(35%);
+}
+
+label {
+    width: 100px;
+}
+
+.blur {
+    filter: blur(5px);
+}
+
+#form {
+    padding: 30px;
+    border-radius: 15px;
+}
+
+legend {
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+.projectLabel {
+    width: 150px;
     align-self: center;
 }
 
-#content {
-    height: 100vh;
-    background: conic-gradient(
-        #ffffff 90deg,
-        rgb(202, 186, 163) 90deg 180deg,
-        #ffffff 180deg 270deg,
-        rgb(202, 186, 163) 270deg
-    );
-    background-repeat: repeat;
-    background-size: 40px 40px;
-    background-position: top left;
-    align-items: center;
-    justify-content: center;
+.project-header {
+    font-size: 25px;
+    text-decoration: underline;
+}
+
+.project-header {
     display: flex;
+    justify-content: space-evenly;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.content {
+    flex: 1;
+    justify-content: center;
+}
+
+.content-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+.project-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+.red {
+    background-color: rgba(224, 22, 22, .2);
+}
+
+.yellow {
+    background-color: rgba(211, 211, 29, .2);
+}
+
+.green {
+    background-color: rgba(18, 142, 18, .2);
+}
+
+button {
+    display: flex;
+    border: none;
+    gap: 5px;
+    cursor: pointer;
+    align-items: center;
+    background: none;
+}
+
+img {
+    width: 20%;
+}
+
+.taskDiv {
+    border-top: 1px solid brown;
+    border-bottom: 1px solid brown;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 70%;
+    translate: 20%;
+    height: 70px;
+    align-items: center;
+}
+
+.task-title {
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.task-dueDate {
+    font-size: 12px;
+    color: rgb(61, 61, 239);
+}
+
+.task-deleteBtn {
+    height: 25px;
+    width: 25px;
+    opacity: 70%;
+    align-self: flex-end;
+    translate: 0px -35px;
+}
+
+.task-deleteBtn:hover {
+    cursor: pointer;
+    filter: invert(30%) sepia(90%) hue-rotate(6deg) saturate(97);
 }
 
 
 
+form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    border: 2px solid rgb(71, 71, 67);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    z-index: 30;
+}
+
+.closeBtn {
+    position: absolute;
+    right: 0px;
+}
