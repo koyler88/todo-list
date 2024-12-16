@@ -103,7 +103,7 @@ export function allTasksBtnLogic(allTasksArray) {
             DueDateDiv.classList.add("task-dueDate")
             newDiv.appendChild(DueDateDiv)
             const deleteBtn = document.createElement("img")
-            deleteBtn.src= 'http://localhost:8080/bcf8d6ff346603c8a51a.svg'
+            deleteBtn.src= "SVG/trash-can-outline.svg"
             deleteBtn.classList.add("task-deleteBtn")
             newDiv.appendChild(deleteBtn)
             const parentProject = document.querySelector(`.${project}div`)
