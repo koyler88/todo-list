@@ -1,3 +1,5 @@
+import trashcan from "./SVG/trash-can-outline.svg"
+
 export function allTasksBtnLogic(allTasksArray) {
     const allTasksBtn = document.querySelector(".all-tasks")
 
@@ -103,7 +105,7 @@ export function allTasksBtnLogic(allTasksArray) {
             DueDateDiv.classList.add("task-dueDate")
             newDiv.appendChild(DueDateDiv)
             const deleteBtn = document.createElement("img")
-            deleteBtn.src= "SVG/trash-can-outline.svg"
+            deleteBtn.src = trashcan
             deleteBtn.classList.add("task-deleteBtn")
             newDiv.appendChild(deleteBtn)
             const parentProject = document.querySelector(`.${project}div`)

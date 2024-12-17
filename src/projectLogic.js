@@ -1,3 +1,4 @@
+import trashcan from "./SVG/trash-can-outline.svg"
 import { allTasksArray } from "./taskFormLogic"
 export function projectLogic() {
     const projects = document.querySelectorAll(".project")
@@ -86,7 +87,7 @@ export function projectLogic() {
                 DueDateDiv.classList.add("task-dueDate")
                 newDiv.appendChild(DueDateDiv)
                 const deleteBtn = document.createElement("img")
-                deleteBtn.src= 'http://localhost:8080/bcf8d6ff346603c8a51a.svg'
+                deleteBtn.src = trashcan
                 deleteBtn.textContent = "Delete Task"
                 deleteBtn.classList.add("task-deleteBtn")
                 newDiv.appendChild(deleteBtn)

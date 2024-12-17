@@ -31,6 +31,7 @@ export function projectButtonLogic() {
         titleInput.type = "text"
         titleInput.name = "title"
         titleInput.id = "title"
+        titleInput.required = true;
 
         
 
