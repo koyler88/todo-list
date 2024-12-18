@@ -1,4 +1,8 @@
-const allTasksArray = [{title: 'Take out Trash', dueDate: '2024-12-16', project: 'Home', priority: 'medium'}]
+let allTasksArray = JSON.parse(localStorage.getItem("tasksArray"))
+if (allTasksArray === null) {
+    allTasksArray = []
+}
+
 
 
 export function submitButtonLogic() {

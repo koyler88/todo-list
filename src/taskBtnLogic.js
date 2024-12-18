@@ -5,10 +5,14 @@ export function taskButtonLogic() {
     const addTaskButton = document.querySelector(".add-task")
 
     addTaskButton.addEventListener('click', () => {
-        if (!document.getElementById("form")) {
-            createTaskFormPopup();
-            submitButtonLogic();
-            closeButtonLogic();
+        if (!document.querySelector(".project")) {
+            alert("Please Create a Project")
+        } else {
+            if (!document.getElementById("form")) {
+                createTaskFormPopup();
+                submitButtonLogic();
+                closeButtonLogic();
+            }
         }
         
     })

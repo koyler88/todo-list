@@ -1,5 +1,9 @@
 import { closeButtonLogic } from "./taskFormLogic";
 import { projectLogic } from "./projectLogic";
+import folderSVG from "./SVG/folder.svg";
+import trashcan from "./SVG/trash-can-outline.svg"
+import { allTasksArray } from "./taskFormLogic";
+import { updateLocalStorage } from "./localStorage";
 
 export function projectButtonLogic() {
     const button = document.querySelector(".new-project")
@@ -74,18 +78,45 @@ export function projectButtonLogic() {
         }
     }
 
+    function resetIndex() {
+        const taskDivs = document.querySelectorAll(".taskDiv")
+        let i = 0
+        taskDivs.forEach(e => {
+            e.setAttribute("array-index", i);
+            i += 1;
+        })
+      }
+
     function addNewProject(title) {
         const projectContainer = document.querySelector(".project-container")
         const projectDiv = document.createElement("div")
         projectDiv.classList.add(title, "project")
 
         const image = document.createElement("img")
-        image.src = 'http://localhost:8080/4f7502b516619bd506d6.svg'
+        image.src = folderSVG
         image.classList.add("folder")
+
+        const deleteBtn = document.createElement("img")
+        deleteBtn.src = trashcan
+        deleteBtn.classList.add("project-deleteBtn")
 
         projectDiv.textContent = title
         projectDiv.prepend(image)
+        projectDiv.appendChild(deleteBtn)
         projectContainer.appendChild(projectDiv)
+
+        deleteBtn.addEventListener("click", () => {
+            let projectName = deleteBtn.parentElement.classList[0]
+            for (let i = 0; i < allTasksArray.length; i++) {
+                if (allTasksArray[i].project === projectName) {
+                    allTasksArray.splice(i, 1)
+                    i += -1
+                }
+            }
+            deleteBtn.parentElement.remove();
+            resetIndex();
+            updateLocalStorage(allTasksArray);
+        })
         
     }
 }

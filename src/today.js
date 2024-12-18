@@ -1,11 +1,13 @@
 import { allTasksArray } from "./taskFormLogic";
 import trashcan from "./SVG/trash-can-outline.svg"
+import { updateLocalStorage } from "./localStorage";
 export function todayBtnLogic() {
     const todayBtn = document.querySelector(".today")
 
     todayBtn.addEventListener("click", () => {
         updateActiveClass();
         displayTasks();
+        updateLocalStorage(allTasksArray);
     })
 
     function updateActiveClass() {
@@ -72,7 +74,6 @@ export function todayBtnLogic() {
 
         projectTitles.forEach((title) => {
             if(!title.getElementsByClassName("taskDiv").length > 0) {
-                console.log(title)
                 title.remove()
             }
         })
@@ -152,6 +153,7 @@ export function todayBtnLogic() {
                     deleteBtn.parentElement.remove()
                     allTasksArray.splice(arrayIndex, 1)
                     resetIndex();
+                    updateLocalStorage(allTasksArray);
                 })
             }
         }

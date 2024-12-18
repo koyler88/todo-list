@@ -1,16 +1,20 @@
 import trashcan from "./SVG/trash-can-outline.svg"
+import { updateLocalStorage } from "./localStorage";
 
 export function allTasksBtnLogic(allTasksArray) {
-    const allTasksBtn = document.querySelector(".all-tasks")
+    const allTasksBtn = document.querySelector(".all-tasks")    
 
     allTasksBtn.addEventListener("click", () => {
         updateActiveClass();
         displayTasks(allTasksArray);
+        updateLocalStorage(allTasksArray)
     })
 
     function updateActiveClass() {
         const active = document.querySelector(".active")
-        active.classList.remove("active")
+        if (active !== null) {
+            active.classList.remove("active")
+        }
 
         
         allTasksBtn.classList.add("active")
@@ -116,6 +120,7 @@ export function allTasksBtnLogic(allTasksArray) {
                 deleteBtn.parentElement.remove()
                 allTasksArray.splice(arrayIndex, 1)
                 resetIndex();
+                updateLocalStorage(allTasksArray);
             })
         }
     }

@@ -30,6 +30,7 @@
     align-items: center;
     gap: 10px;
     padding-left: 15px;
+    justify-content: space-between;
 }
 
 .gh-image {
@@ -53,6 +54,10 @@
     margin-left: 10px;
 }
 
+.project-deleteBtn {
+    height: 20px;
+}
+
 .active {
     background-color: rgba(207, 202, 202, .6);
     color: rgb(60, 109, 177);
@@ -73,6 +78,7 @@ label {
 #form {
     padding: 30px;
     border-radius: 15px;
+    background-color: white;
 }
 
 legend {
@@ -171,7 +177,7 @@ img {
     translate: 0px -35px;
 }
 
-.task-deleteBtn:hover {
+.task-deleteBtn:hover, .project-deleteBtn:hover {
     cursor: pointer;
     filter: invert(30%) sepia(90%) hue-rotate(6deg) saturate(97);
 }

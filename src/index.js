@@ -9,6 +9,8 @@ import { todayBtnLogic } from "./today";
 import { allTasksArray } from "./taskFormLogic";
 import { projectLogic } from "./projectLogic";
 import { projectButtonLogic } from "./projectButtonLogic";
+import {displayStoredProjectFolders} from "./startup"
+displayStoredProjectFolders();
 todayBtnLogic();
 allTasksBtnLogic(allTasksArray);
 taskButtonLogic();

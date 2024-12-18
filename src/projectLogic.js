@@ -1,3 +1,4 @@
+import { updateLocalStorage } from "./localStorage"
 import trashcan from "./SVG/trash-can-outline.svg"
 import { allTasksArray } from "./taskFormLogic"
 export function projectLogic() {
@@ -6,7 +7,9 @@ export function projectLogic() {
     projects.forEach((project) => {
         project.addEventListener("click", () => {
             const active = document.querySelector(".active")
-            active.classList.remove("active")
+            if (active !== null) {
+                active.classList.remove("active")
+            }
             project.classList.add("active")
             displayTasks(project.classList[0])
         })
@@ -98,6 +101,7 @@ export function projectLogic() {
                     deleteBtn.parentElement.remove()
                     allTasksArray.splice(arrayIndex, 1)
                     resetIndex();
+                    updateLocalStorage(allTasksArray);
                 })
             }
         }
